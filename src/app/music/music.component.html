@@ -1,0 +1,80 @@
+<div class="music">
+  <div class="music-thumb">
+    <img src="https://source.unsplash.com/random" alt="" />
+  </div>
+  <h3 class="music-name">Beautiful in white</h3>
+
+<!--  <input  type="range" name="range" id="range" class="range" min="0" max="{{audio.duration}}" value="{{audio.currentTime}}" />-->
+
+  <input  class="range"  type="range" min="0" max="{{audio.duration}}" step="1" value="{{audio.currentTime}}" (input)="onRangeChange($event)"  />
+
+
+
+<!--  <div class="timer">-->
+<!--    <div class="duration">2:10</div>-->
+<!--    <div class="remaining">-3:10</div>-->
+<!--  </div>-->
+
+
+  <div class="controls">
+    <i class="fa fa-random play-random" aria-hidden="true" (click)="randomSong()"></i>
+    <i class="fa fa-fast-backward play-back" aria-hidden="true" (click)="previousSong()"></i>
+    <div class="play">
+      <div class="player-inner" (click)="playAndPauseAudio()"  >
+        <i class="fa fa-play play-icon" aria-hidden="true"></i>
+      </div>
+    </div>
+    <i class="fa fa-fast-forward play-forward" aria-hidden="true" (click)="nextSong()"></i>
+    <i class="fa fa-retweet play-infinite" aria-hidden="true" (click)="loopSong()" ></i>
+
+  </div>
+  <div class="volume">
+    <div class="volume-mute" (click)="onAndOffVolume()">
+      <i class="fa fa-volume-up" aria-hidden="true" ></i>
+    </div>
+    <input (change)="controlVolume($event)" type="range" class="volume-range" min="0" max="1" step="0.01" [(ngModel)]="volume" >
+  </div>
+</div>
+
+
+
+
+<!--<div>-->
+<!--  <p>Current time: {{ audio.currentTime | date: 'mm:ss' }}</p>-->
+<!--  <p>Duration: {{ audio.duration | date: 'mm:ss' }}</p>-->
+<!--</div>-->
+
+
+
+
+
+
+
+
+<!--<audio controls (timeupdate)="updateProgress()">-->
+<!--  <source src="{{audioUrl}}" type="audio/mp3">-->
+<!--</audio>-->
+<!--<div class="progress-bar" style="background: red">-->
+<!--  <div class="progress" [style.width.%]="progress"></div>-->
+<!--</div>-->
+<!--<div class="time-display">-->
+<!--  <span class="time">{{formatTime(currentTime)}}</span>-->
+<!--  <span class="time-divider">/</span>-->
+<!--  <span class="time">{{formatTime(duration)}}</span>-->
+<!--</div>-->
+
+
+<!--<audio controls >-->
+
+<!--</audio>-->
+
+
+
+
+
+
+
+
+
+
+
